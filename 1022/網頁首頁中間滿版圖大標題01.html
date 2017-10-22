@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<!--    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">-->
+   <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Indie+Flower" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+    
+/*        global setting(用在平板裡也不會變)　*/
+        *{
+/*            font-family: 'Droid Serif', serif;*/
+            font-family: 'Droid Serif', serif;
+            font-family: 'Indie Flower', cursive;
+            box-sizing: border-box;
+            
+        }
+           
+        body,h1,h2,h3,h4,h5,h6,p,ul,ol,li{
+            margin: 0;
+            padding: 0;
+/*            他們都有自己的內距外距*/
+            
+        }
+        
+/*        下:浮動*/
+        .clearfix::after{
+            content: "";
+            display:block;
+            clear: both;
+        }
+        img{
+            width: 100%;
+        }
+/*    ******************************************    */
+/*        下:layout(預設)*/
+        .full-width{width: 100%}/* 設定滿版*/
+        .fixed-width{
+            width: 1200px;
+            margin: auto;}/*   固定寬度 */
+
+        .col-1{
+            width: 100%;
+            padding: 15px; }/*        滿版的一個寬度*/
+        .col-2{
+            width: 50px;
+/*
+            padding: 15px;
+            float:left;
+*/
+        }/*       兩個等分所以用50% */
+
+        .col-3{
+            width: calc(100% / 3);
+/*
+            padding: 15px;
+            float: left;
+*/
+        }
+        .col-4{
+            width:25%;
+/*
+            padding: 15px;
+            float:left;
+*/
+        }
+        .col-5{
+            width:20%;
+/*
+            padding: 15px;
+            float:left;
+*/
+        }
+        .col-2,.col-3,.col-4.col-5{
+            float: left;
+            padding: 15px;
+        }
+        p{
+            color: cadetblue;
+            font-size: 13px;
+            line-height: 2.5em;
+        }
+/*  **********************************      */
+/*      下:  nav選項*/
+        nav{
+            background-color: #ffd890;
+            position: fixed;
+        }
+        nav .col-1{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        nav .logo{
+            float: left;
+        }
+        nav .menu{
+            float: right;
+        }
+         nav .menu li{
+           float: left;
+             list-style: none;
+        }
+         nav .menu a{
+        text-decoration: none;
+             display: block;
+             color: #030a55;
+             margin-left: 30px;
+             font-size: 14px;
+             transition: all .4s;
+        }
+        
+        nav .menu a:hover{
+            color: #ffffff;
+        }
+/*        *********************/
+/*  圖設定      header*/
+/*     - header為 HTML 文件的區域元素，用來放網頁內容的標題區        域，這不同於 <title> ， <title> 為網頁文件的標題。
+       - <header> 除了全域屬性外，沒有定義其他屬性 (attribute) 。
+       - html5 將 header 描述為「一組介紹性或導航性輔助工具」的容器。通常位於文件或章節的頂部，但這非必須。header 由內容定義，而非由位置定義。
+       - 考慮到 header 元素包含「導覽輔助」，nav 出現在 header 內在此情形下是合理的。
+       -nav 元素 包含導航信息，通常是一系列連結，用於最主要的導航信息。/導覽列、選單 
+        - nav 放在 header 外
+*/
+        header {
+            background-image: url(images/banner.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+/*padding-top: 300px;
+            padding-bottom: 300px;*/
+            height: 800px;
+            color: aliceblue;
+        text-align: center;
+            display: table;
+       }
+        header .fixed-width{
+             display: table-cell;
+        vertical-align: middle;
+        }
+        header .fixed-width{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        header h1{
+            font-size: 4em;
+        }
+/*   slogan     ****************/
+        #slogan{
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        #slogan .fixed-width{
+            width: 760px;
+            text-align: center;
+        }
+        #slogan h2{
+            margin-bottom: 30px;
+        }
+/*    works  ***********  */
+        #works{
+            background-image: url(images/banner.jpg);
+         background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+         /*  service  ***********/
+        #services{
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        #services .fixed-width:nth-of-type(1) {
+            text-align: center;
+        }
+        #services h2 {
+            margin-bottom: 30px;
+        }
+        
+/*        讓底部有空間*/
+       #services h3 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        #services .col-3 {
+            height: 300px;
+        }
+
+
+        
+        
+    </style>
+</head>
+<body>
+    <nav class="full-width">
+        <div class="col-1 clearfix">
+            <div class="logo">ASDFG</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">WORKS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">BLOG</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--  在圖上的字的設定 ************-->
+    <header class="full-width"><!--圖滿版-->
+        <div class="fixed-width"><!--置中-->
+            <h1>HA HA HA HA HA</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, optio.</p>
+        </div>
+    </header>
+<!-- slogan**********-->
+    <div id="slogan" class="full-width">
+        <div class="fixed-width">
+        <h2>WHY U SO　ＦＡＲ？</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus neque, quaerat, ipsam corrupti dicta sint, iste illo placeat dolorum repellendus excepturi voluptatibus ad nulla sequi esse id. Esse, harum, perferendis?</p>
+        </div>
+    </div>
+<!--  works  ***********-->
+<div id="works"class="full-width"></div>
+<div id="services" class="full-width">
+        <div class="fixed-width">
+        <h2> BEST SERVICES </h2>
+        <p>iste illo placeat dolorum repellendus excepturi voluptatibus ad nulla sequi esse id. Esse, harum, perferendis?</p>
+        </div>      
+<!--        添加ｉｃｏｎ-->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+<!--         -->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+<!--         -->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+<!--         -->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+<!--         -->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+<!--         -->
+         <div class="fixed-width">
+         <div class="col-3">
+             <span class="fa fa-camera-retro fa-lg"></span>
+             <h3>title</h3>
+             <p>Ratione, optio.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+         </div>
+         </div>
+         
+         </div>
+        
+        
+</body>
+</html>
